@@ -4,8 +4,8 @@ It uses gulp task manager with a number of pluggins:
 
 -browser-sync<br>
 -bower<br>
--gulp-sas<br> 
--gulp-clean-cs<br> 
+-gulp-sass<br> 
+-gulp-clean-css<br> 
 -gulp-concat<br>
 -gulp-uglifyjs<br>
 -gulp-rename<br>
