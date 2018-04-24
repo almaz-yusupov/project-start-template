@@ -18,7 +18,10 @@ by command:
 And then just launch the gulp, deafult task launchs browser-sync and watch-functions 
 to track all your *.html, *css, *.sass, *.js files. 
 
-If you are using scss-syntax, correct the mask in the gulpfile in next tasks: -sass -sass:build -watch. 
+If you are using scss-syntax, correct the mask in the gulpfile in next tasks: -sass  -sass:build  -watch. 
+
+    JS-files of your using pluggins for best optimization should be plugged in gulpfile.js,
+    for CSS-files created '_libs.sass' in the directory '/app/sass/'
 
 Task "build" compiles, minifies and moves the project to directory 'dist'. All dependences of project's root structure can be seemed in gulpfile.js.
 
