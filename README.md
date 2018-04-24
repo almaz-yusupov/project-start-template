@@ -8,7 +8,7 @@ It uses gulp task manager with a number of pluggins:
 -gulp-clean-cs<br> 
 -gulp-concat<br>
 -gulp-uglifyjs<br>
--gulp-renam<br>
+-gulp-rename<br>
 
 For start you should to install all pluggins in CLI in the project directory 
 by command: 
@@ -24,6 +24,5 @@ Task "build" compiles, minifies and moves the project to directory 'dist'. All d
 
 In next versions I will add a few useful pluggins, like a autoprefixer, rsync and image optimizator. 
 
-Don't forget to update for a new versions! =) 
 
 #html #css #js #starttemplate
