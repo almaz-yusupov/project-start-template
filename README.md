@@ -3,12 +3,12 @@ This little template serves to the quick launch and optimize your new project.
 It uses gulp task-manager with a number of pluggins:
 
 -browser-sync<br>
--bower<br>
 -gulp-sass<br> 
 -gulp-clean-css<br> 
 -gulp-concat<br>
 -gulp-uglifyjs<br>
 -gulp-rename<br>
+-gulp-wait
 
 To get start you should to install all pluggins in CLI in the project directory 
 by command: 
@@ -16,9 +16,11 @@ by command:
 
 
 And then just launch the gulp, deafult task launchs browser-sync and watch-functions 
-to track all your *.html, *css, *.sass, *.js files. 
+to track all your *.html, *css, *.scss, *.js files.
 
-If you are using scss-syntax, correct the mask in the gulpfile in next tasks: -sass  -sass:build  -watch. 
+In template included jQuery v3.3.1.
+
+If you use sass-syntax, correct the masks in the gulpfile in next tasks: -sass  -sass:build  -watch. 
 
     For the best optimization JS-files of your using pluggins should be plugged in gulpfile.js,
     CSS-files - in '_libs.sass' in the directory '/app/sass/'
