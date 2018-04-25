@@ -15,7 +15,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-wait": "0.0.2"
   },
   "dependencies": {}
 }

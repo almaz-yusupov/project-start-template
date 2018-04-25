@@ -4,6 +4,7 @@ var gulp 					= require('gulp'),
 		cleanCSS 			= require('gulp-clean-css'),
 		concat 				= require('gulp-concat'),
 		uglify 				= require('gulp-uglifyjs'),
+		wait					= require('gulp-wait')
 		rename 				= require('gulp-rename');
 
 gulp.task('browser-sync', function(){
@@ -16,7 +17,8 @@ gulp.task('browser-sync', function(){
 });
 
 gulp.task('sass', function(){
-	gulp.src('app/sass/**/*.sass')
+	gulp.src('app/scss/**/*.scss')
+		.pipe(wait(500))
 		.pipe(sass({  outputStyle: 'expand'  })).on('error', sass.logError)
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('app/css'))
@@ -24,7 +26,7 @@ gulp.task('sass', function(){
 });
 
 gulp.task('sass:build', function(){
-	gulp.src('app/sass/**/*.sass')
+	gulp.src('app/scss/**/*.scss')
 		.pipe(sass()).on('error', sass.logError)
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(cleanCSS())
@@ -33,13 +35,13 @@ gulp.task('sass:build', function(){
 
 var addLibsJS = gulp.src([
 				//'path to .js file',
+				'app/libs/jquery/dist/jquery.min.js',
 				'app/js/common.js' //always in the end
 				]);
 
 gulp.task('js', function(){
 	addLibsJS
 		.pipe(concat('scripts.min.js'))
-		//.pipe(rename({ basename: 'scripts', suffix: '.min' }))
 		.pipe(gulp.dest('app/js'))
 		.pipe(browserSync.stream());
 });
@@ -52,7 +54,7 @@ gulp.task('js:build', function(){
 });
 
 gulp.task('watch', ['sass', 'js', 'browser-sync'], function(){
-	gulp.watch('app/sass/**/*.sass', ['sass']);
+	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/js/**/*.js').on('change', browserSync.reload);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
